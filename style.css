@@ -26,27 +26,28 @@ body {
 .glow-button { padding: 15px 40px; background: #2a0808; color: #D4AF37; border: 2px solid #D4AF37; border-radius: 50px; cursor: pointer; transition: 0.3s; font-size: 1.4rem; position: relative; }
 .glow-button:hover { box-shadow: 0 0 20px #D4AF37; transform: scale(1.05); }
 
-/* The Card Container */
+/* The Card Container - Full Stack Effect */
 .stack-card {
   position: sticky;
+  top: 20px; /* Everyone pins at the exact same spot */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   padding: 30px;
   border-radius: 40px;
   margin-bottom: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   align-items: center;
 }
 
-/* Staggered Stacking */
-.c1 { top: 40px; }
-.c2 { top: 80px; }
-.c3 { top: 120px; }
-.c4 { top: 160px; }
-.c5 { top: 200px; }
-.c6 { top: 240px; }
-.c7 { top: 280px; }
+/* Z-Index for full layering */
+.c1 { z-index: 1; }
+.c2 { z-index: 2; }
+.c3 { z-index: 3; }
+.c4 { z-index: 4; }
+.c5 { z-index: 5; }
+.c6 { z-index: 6; }
+.c7 { z-index: 7; }
 
 /* Image Styling */
 .card-image img {
@@ -80,7 +81,7 @@ p {
 @keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
 @keyframes pop { 0% { transform: translate(-50%, -50%) scale(0); opacity: 1; } 100% { transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(var(--ds)); opacity: 0; } }
 
-/* Mobile Optimization: Shrink text and padding, keep stacking */
+/* Mobile Optimization */
 @media (max-width: 768px) {
   .stack-card {
     grid-template-columns: 1fr;
