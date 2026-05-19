@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YG's Cinematic Album</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { font-family: 'Dancing Script', cursive; }
+        .screen { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 20px; overflow: hidden; position: relative; }
+        .hidden { display: none; }
+        .gold-text { color: #D4AF37 !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .cursive-gold { font-size: 3.5rem; }
+        #message-text { font-size: 2rem; max-width: 600px; padding: 20px; transition: opacity 0.3s; }
+        .stack-card h3 { font-size: 2.5rem; }
+        .stack-card p { font-size: 1.3rem; line-height: 1.4; }
+        .glow-button { padding: 15px 40px; background: #2a0808; color: #D4AF37; border: 2px solid #D4AF37; border-radius: 50px; cursor: pointer; transition: 0.3s; font-size: 1.4rem; position: relative; }
+        .glow-button:hover { box-shadow: 0 0 20px #D4AF37; transform: scale(1.05); }
+        #glitter-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
+        .glitter { position: absolute; background: #D4AF37; border-radius: 50%; opacity: 0; animation: fall linear infinite; }
+        .glitter-pop { position: absolute; background: #D4AF37; border-radius: 50%; pointer-events: none; animation: pop 0.6s ease-out forwards; }
+        @keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+        @keyframes pop { 0% { transform: translate(-50%, -50%) scale(0); opacity: 1; } 100% { transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(var(--ds)); opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" src="music.mp3" loop></audio>
+
+    <div id="glitter-container"></div>
+
+    <div id="welcome-screen" class="screen">
+        <h1 class="cursive-gold gold-text">Welcome, baby girl</h1>
+        <button id="start-btn" class="glow-button magical-btn">Start</button>
+    </div>
+
+    <div id="message-screen" class="screen hidden">
+        <p id="message-text" class="gold-text">Hey chello, how are you mama?</p>
+        <button id="next-btn" class="glow-button magical-btn">Next</button>
+    </div>
+
+    <div id="album-screen" class="hidden">
+        <div class="stack-wrapper">
+            <section class="stack-card c1" style="background: #ffffff; color: #151515;"><div class="card-image"><img src="images/P1.JPG" alt="Memory 01"></div><div class="card-content"><h3>SEEDS</h3><p>Everything started so small baby… like one random spark that slowly became something so important in my life. In those first few weeks, we were learning each other slowly, understanding our vibes, our energy, and how naturally we matched even from far away. It was the beginning of us, ma… full of excitement, curiosity, and those little moments that made me smile for no reason.</p></div></section>
+            <section class="stack-card c2" style="background: #fcf5f5; color: #151515;"><div class="card-image"><img src="images/P2.JPG" alt="Memory 02"></div><div class="card-content"><h3>ROOTS</h3><p>This was when everything started becoming deeper, baby. The nervousness slowly turned into comfort. Our daily talks became my peace, ma. No matter how fucked up my day was, hearing from you made everything feel lighter. We started understanding the small things about each other… the little habits, the moods, the things that make us smile without even trying.</p></div></section>
+            <section class="stack-card c3" style="background: #f5e1e1; color: #151515;"><div class="card-image"><img src="images/P3.JPG" alt="Memory 03"></div><div class="card-content"><h3>BLOOM</h3><p>This was when us became natural, baby. We started understanding how to handle misunderstandings better, how to be patient with each other, and how to laugh even during stressful moments. The “long distance” thing stopped feeling heavy because somehow you already felt so close to me, ma. Like no matter the distance, you were always with me.</p></div></section>
+            <section class="stack-card c4" style="background: #d99a9a; color: #ffffff;"><div class="card-image"><img src="images/P4.JPG" alt="Memory 04"></div><div class="card-content"><h3>LIGHT</h3><p>Even from miles away, you always found ways to make me feel loved, baby. Late night calls, random messages, little moments… everything meant so much to me. We became each other’s comfort and safe place. You were honestly the light during my dark days, ma. You kept my energy alive without even knowing it.</p></div></section>
+            <section class="stack-card c5" style="background: #c27d7d; color: #ffffff;"><div class="card-image"><img src="images/P5.JPG" alt="Memory 05"></div><div class="card-content"><h3>REACH</h3><p>This was when we started dreaming together, baby. Talking about the future, the next meet up, the “what ifs,” and all the things we wanna experience together. Slowly, it stopped being just about today… it became about building a future together, ma. No matter how far we are, i know we’re reaching for the same thing.</p></div></section>
+            <section class="stack-card c6" style="background: #ab5f5f; color: #ffffff;"><div class="card-image"><img src="images/P6.JPG" alt="Memory 06"></div><div class="card-content"><h3>VIBRANCE</h3><p>Honestly baby, these weeks made me realize how happy the small things with you make me. Sharing songs, random updates, stupid jokes, surprise texts… all these little things became the best part of my day. It’s not about doing something huge all the time, ma. It’s the effort, the attention, and the love behind every small moment.</p></div></section>
+            <section class="stack-card c7" style="background: #8c4242; color: #ffffff;"><div class="card-image"><img src="images/P7.JPG" alt="Memory 07"></div><div class="card-content"><h3>GARDEN</h3><p>Three months in baby… and look at us. Look at everything we built together. We’re not just two people loving each other anymore, ma. We became a team. We protected each other, learned together, grew together, and created something so meaningful. The small seed we planted together slowly became our safe place… our own little home that we carry with us no matter where we are, baby. Happy 3 Monthsary Chello mama ♥️ </p></div></section>
+        </div>
+    </div>
+
+    <script>
+        const msgs = ["Hey chello, hehehe?", "Yes, another 3rd project that I did to appreciate our journey together.", "It's something small, but it is straight from my heart mama.", "I wish you love it, sayang.", "I LOVE YOU SO MUCH BABY."];
+        let i = 0;
+        const welcomeScreen = document.getElementById('welcome-screen'), msgScreen = document.getElementById('message-screen'), albumScreen = document.getElementById('album-screen'), msgText = document.getElementById('message-text'), glitterContainer = document.getElementById('glitter-container'), audio = document.getElementById('bg-music');
+        
+        document.getElementById('start-btn').onclick = () => { audio.play(); welcomeScreen.classList.add('hidden'); msgScreen.classList.remove('hidden'); };
+        document.getElementById('next-btn').onclick = () => {
+            i++;
+            if(i < msgs.length) { msgText.style.opacity = 0; setTimeout(() => { msgText.innerText = msgs[i]; msgText.style.opacity = 1; }, 300); }
+            else { msgScreen.classList.add('hidden'); albumScreen.classList.remove('hidden'); }
+        };
+        // Glitter scripts remain same...
+        function createFallingGlitter() { for(let j=0; j<20; j++) { setTimeout(() => { const g = document.createElement('div'); g.classList.add('glitter'); g.style.left = Math.random()*100 + 'vw'; const s = Math.random()*6+3 + 'px'; g.style.width = s; g.style.height = s; g.style.animationDuration = Math.random()*10+5 + 's'; glitterContainer.appendChild(g); setTimeout(() => g.remove(), 15000); }, j*500); } }
+        createFallingGlitter(); setInterval(createFallingGlitter, 10000);
+        document.querySelectorAll('.magical-btn').forEach(btn => { btn.addEventListener('click', (e) => { const rect = btn.getBoundingClientRect(), cx = rect.left+rect.width/2, cy = rect.top+rect.height/2; for(let k=0; k<15; k++) { const p = document.createElement('div'); p.classList.add('glitter-pop'); p.style.setProperty('--dx', (Math.random()-0.5)*200+'px'); p.style.setProperty('--dy', (Math.random()-0.5)*200+'px'); p.style.setProperty('--ds', Math.random()*1.5+0.5); p.style.left = cx+'px'; p.style.top = cy+'px'; glitterContainer.appendChild(p); setTimeout(() => p.remove(), 600); } }); });
+    </script>
+</body>
+</html>

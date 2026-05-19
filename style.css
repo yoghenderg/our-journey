@@ -1,0 +1,89 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Fixed Maroon Background */
+body {
+  background-color: #2a0808;
+  background-image: radial-gradient(circle at 50% 50%, #4a1515 0%, #2a0808 100%);
+  background-attachment: fixed;
+  font-family: 'Dancing Script', cursive; /* Set globally for that cursive look */
+  padding: 40px 20px;
+}
+
+/* Wrapper */
+.stack-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Screen & Intro Styles */
+.screen { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 20px; overflow: hidden; position: relative; }
+.hidden { display: none; }
+.cursive-gold { font-size: 3.5rem; color: #D4AF37 !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.gold-text { color: #D4AF37 !important; }
+
+/* Glowing Buttons */
+.glow-button { padding: 15px 40px; background: #2a0808; color: #D4AF37; border: 2px solid #D4AF37; border-radius: 50px; cursor: pointer; transition: 0.3s; font-size: 1.4rem; position: relative; }
+.glow-button:hover { box-shadow: 0 0 20px #D4AF37; transform: scale(1.05); }
+
+/* The Card Container */
+.stack-card {
+  position: sticky;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 30px;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  align-items: center;
+}
+
+/* Staggered Stacking */
+.c1 { top: 40px; }
+.c2 { top: 80px; }
+.c3 { top: 120px; }
+.c4 { top: 160px; }
+.c5 { top: 200px; }
+.c6 { top: 240px; }
+.c7 { top: 280px; }
+
+/* Image Styling */
+.card-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Text Styling - Forced Gold/Inherit */
+.card-content { color: inherit; }
+.eyebrow { 
+  font-size: 12px; 
+  font-weight: 800; 
+  text-transform: uppercase; 
+  display: block;
+  margin-bottom: 10px;
+  color: inherit; 
+}
+h3 { font-size: 2rem; margin: 10px 0; color: inherit; }
+p { 
+  line-height: 1.6; 
+  color: inherit !important; 
+}
+
+/* Glitter Effects Styling */
+#glitter-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
+.glitter { position: absolute; background: #D4AF37; border-radius: 50%; opacity: 0; animation: fall linear infinite; }
+.glitter-pop { position: absolute; background: #D4AF37; border-radius: 50%; pointer-events: none; animation: pop 0.6s ease-out forwards; }
+
+@keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+@keyframes pop { 0% { transform: translate(-50%, -50%) scale(0); opacity: 1; } 100% { transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(var(--ds)); opacity: 0; } }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .stack-card {
+    grid-template-columns: 1fr;
+    top: 20px !important;
+  }
+}
