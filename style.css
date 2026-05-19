@@ -6,7 +6,7 @@ body {
   background-color: #2a0808;
   background-image: radial-gradient(circle at 50% 50%, #4a1515 0%, #2a0808 100%);
   background-attachment: fixed;
-  font-family: 'Dancing Script', cursive; /* Set globally for that cursive look */
+  font-family: 'Dancing Script', cursive;
   padding: 40px 20px;
 }
 
@@ -31,7 +31,7 @@ body {
   position: sticky;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 30px;
   padding: 30px;
   border-radius: 40px;
   margin-bottom: 20px;
@@ -56,19 +56,19 @@ body {
   border-radius: 20px;
 }
 
-/* Text Styling - Forced Gold/Inherit */
+/* Text Styling */
 .card-content { color: inherit; }
 .eyebrow { 
-  font-size: 12px; 
+  font-size: 10px; 
   font-weight: 800; 
   text-transform: uppercase; 
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: inherit; 
 }
-h3 { font-size: 2rem; margin: 10px 0; color: inherit; }
+h3 { font-size: 2rem; margin: 5px 0; color: inherit; }
 p { 
-  line-height: 1.6; 
+  line-height: 1.4; 
   color: inherit !important; 
 }
 
@@ -80,28 +80,21 @@ p {
 @keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
 @keyframes pop { 0% { transform: translate(-50%, -50%) scale(0); opacity: 1; } 100% { transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(var(--ds)); opacity: 0; } }
 
-/* Mobile */
-/* Mobile optimization: Smaller cards and text for mobile screens */
+/* Mobile Optimization: Shrink text and padding, keep stacking */
 @media (max-width: 768px) {
   .stack-card {
     grid-template-columns: 1fr;
-    height: 85vh; /* Limits card height so text doesn't get cut off */
-    padding: 20px;
-    gap: 15px;
+    padding: 15px;
+    gap: 10px;
   }
-
   .card-image img {
-    height: 200px; /* Shrinks image to save space */
+    height: 180px;
   }
-
   h3 {
-    font-size: 1.8rem !important; /* Slightly smaller title */
+    font-size: 1.5rem !important;
   }
-
   p {
-    font-size: 1.1rem !important; /* Shrinks the description text */
+    font-size: 1rem !important;
     line-height: 1.3;
-    max-height: 250px; /* Ensures text stays within card */
-    overflow-y: auto; /* Allows scrolling inside the text if it's very long */
   }
 }
